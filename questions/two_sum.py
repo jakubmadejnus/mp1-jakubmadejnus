@@ -43,7 +43,28 @@ Tags:
 
 from typing import List
 
-
 def two_sum(arr: List[int], target: int) -> List[int]:
-    # TODO: Implement the function
-    return [0]
+
+   # what the program already has
+
+   # the first pointer
+   i = 0
+
+   # the second pointer
+   j = len(arr) - 1
+
+   while i < j:
+        # If we find a solution, print solution
+        if arr[i] + arr[j] == target:
+            return [i, j]
+        
+        # If sum of elements at current pointers is less, we move towards higher values by doing i++
+        elif arr[i] + arr[j] < target:
+            i += 1
+ 
+        # If sum of elements at current pointers is more, we move towards lower values by doing j--
+        else:
+            j -= 1
+ 
+   return []
+
